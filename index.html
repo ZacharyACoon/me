@@ -5,6 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+    
     html, body {
       min-width: 100vw;
       min-height: 100vh;
@@ -12,12 +16,12 @@
     
     body {
       margin: 0;
-      background-color: rgba(0, 0, 0, 0.92);
+      background-color: rgba(0, 0, 0, 0.2);
       display: flex;
       flex-direction: column;
       width: 100%;
       height: 100%;
-      color: whitesmoke;
+      color: rgba(255, 255, 255, 0.9);
     }
     
     .page {
@@ -31,8 +35,11 @@
       flex-direction: column;
     }
     
-    .center {
+    .pc, .pc * {
       justify-content: center;
+    }
+    
+    .sc, .sc * {
       align-items: center;
     }
     
@@ -41,13 +48,38 @@
       padding: 1em 2em;
     }
     
-    .navigation, .navigation * {
+    .navigation {
+      display: flex;
+      flex-direction: row;
+      flex-grow: 0;
+      flex-wrap: wrap;
+      min-width: 50%;
+      gap: 1em;
+    }
+    
+    .navigation * {
       display: flex;
       flex-direction: column;
     }
     
+    .navigation > .section {
+      justify-content: start;
+      flex-grow: 1;
+      align-self: stretch;
+      flex-basis: 0;
+      flex-shrink: 1;
+      background-color: rgba(255, 255, 255, 0.01);
+      border: 2px solid rgba(255, 255, 255, 0.02);
+      border-radius: 5px;
+    }
+    
     .navigation > .section > .title {
-      font-size: 24px;
+      text-transform: uppercase;
+      font-size: 18px;
+      width: 100%;
+      color: rgba(255, 255, 255, 0.2);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.02);
+      padding: 0.5em;
     }
     
     .navigation ul.links {
@@ -58,10 +90,31 @@
       margin-bottom: 1.5em;
     }
     
-    .navigation > ul.links > li {
+    .navigation > .section > ul.links > li {
       list-style-type: none;
       padding: 0;
       margin: 0;
+    }
+    
+    
+    .no-select, .no-select * {
+      -webkit-user-select: none; /* Safari */
+      -ms-user-select: none; /* IE 10 and IE 11 */
+      user-select: none; /* Standard syntax */
+    }
+    
+    /* Minimum aspect ratio */
+    @media (min-aspect-ratio: 16/9) {
+      .navigation {
+        flex-direction: row;
+      }
+    }
+    
+    /* Maximum aspect ratio */
+    @media (max-aspect-ratio: 16/9) {
+      .navigation {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
