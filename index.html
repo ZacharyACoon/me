@@ -1,1 +1,96 @@
-Hi there.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ZAC</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html, body {
+      min-width: 100vw;
+      min-height: 100vh;
+    }
+    
+    body {
+      margin: 0;
+      background-color: rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      color: whitesmoke;
+    }
+    
+    .page {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .page, .page > * {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .center {
+      justify-content: center;
+      align-items: center;
+    }
+    
+    #site-title {
+      font-size: 48px;
+      padding: 1em 2em;
+    }
+    
+    .navigation, .navigation * {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .navigation > .section > .title {
+      font-size: 24px;
+    }
+    
+    .navigation ul.links {
+      padding: 0;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.5em;
+      margin-bottom: 1.5em;
+    }
+    
+    .navigation > ul.links > li {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="page center">
+    <div id="site-title">ZAC</div>
+    <div class="navigation">
+      <div class="section">
+        <div class="title">Communication</div>
+        <ul class="links">
+          <li>Discord</li>
+          <li>Signal</li>
+          <li>Email</li>
+        </ul>
+      </div>
+      <div class="section">
+        <div class="title">Security</div>
+        <ul class="links">
+          <li>GPG</li>
+          <li>SSH</li>
+        </ul>
+      </div>
+      <div class="section">
+        <div class="title">Fun</div>
+        <ul class="links">
+          <li>Media</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
